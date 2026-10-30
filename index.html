@@ -36,6 +36,8 @@ a{color:var(--uv);text-decoration:none;border-bottom:1px solid transparent}a:hov
 #rail button.on{background:var(--uv);border-color:var(--uv)}
 #rail button:focus-visible{outline:1px solid var(--uv);outline-offset:4px}
 #tip{position:absolute;z-index:3;pointer-events:none;background:#121212;border:1px solid #2a2a28;padding:8px 12px;font-size:12px;opacity:0;transition:opacity .15s;max-width:260px}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:5;background:#121212;border:1px solid #2a2a28;padding:8px 12px;font-size:12px;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+#toast.on{opacity:1}
 .hint{position:absolute;bottom:24px;left:32px;font-size:12px;color:var(--dim);z-index:2;transition:opacity .4s}
 /* the story as plain text: read by screen readers and search engines, shown when 3D can't run */
 #story{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -47,12 +49,13 @@ a{color:var(--uv);text-decoration:none;border-bottom:1px solid transparent}a:hov
 </style></head><body>
 <div id="track"><div id="stage">
   <div id="gl" aria-hidden="true"></div>
-  <div class="top"><span>muhammed azhar</span><nav><a href="#contact" data-go>contact</a><a href="mailto:muhammedazhar.salim@gmail.com">email</a><a href="cv.pdf">cv</a></nav></div>
+  <div class="top"><span>muhammed azhar</span><nav><a href="#contact" data-go>contact</a><a href="mailto:muhammedazhar.salim@gmail.com">email</a><a href="https://www.linkedin.com/in/muhammed-azhar-salim-49a289185/">linkedin</a><a href="cv.pdf">cv</a></nav></div>
   <div class="hint" id="hint" aria-hidden="true">scroll to build the board ↓<span class="mouse"> · move the mouse to look around</span></div>
   <div id="copy" aria-hidden="true"></div>
   <div id="rail" aria-hidden="true"></div>
   <div id="tip" aria-hidden="true"></div>
 </div></div>
+<div id="toast" role="status"></div>
 
 <main id="story">
   <section data-k="muhammed azhar · agentic AI &amp; backend engineer" data-cursor>
@@ -79,7 +82,7 @@ a{color:var(--uv);text-decoration:none;border-bottom:1px solid transparent}a:hov
   <section id="contact" data-k="contact · work with me" data-cursor>
     <h2>Everything here proves I can build it.</h2>
     <p>Let's build AI that works in your business, together. Remote, from Ernakulam, Kerala.</p>
-    <div class="links"><a href="mailto:muhammedazhar.salim@gmail.com">email</a><a href="https://github.com/macs666">github</a><a href="cv.pdf">cv.pdf</a></div></section>
+    <div class="links"><a href="mailto:muhammedazhar.salim@gmail.com">email</a><a href="https://www.linkedin.com/in/muhammed-azhar-salim-49a289185/">linkedin</a><a href="https://github.com/macs666">github</a><a href="cv.pdf">cv.pdf</a></div></section>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -87,6 +90,10 @@ a{color:var(--uv);text-decoration:none;border-bottom:1px solid transparent}a:hov
 // chapters come from the plain-text story above, so the words live in one place
 const S=[...document.querySelectorAll('#story section')].map(el=>({k:el.dataset.k,h:el.querySelector('h2').innerHTML+(el.hasAttribute('data-cursor')?'<span class="cursor"></span>':''),p:el.querySelector('p').innerHTML,links:el.querySelector('.links')?.outerHTML||'',label:el.dataset.label}));
 const N=S.length,copy=document.getElementById('copy'),rail=document.getElementById('rail'),tip=document.getElementById('tip'),host=document.getElementById('gl');
+// mailto does nothing without a mail app, so also copy the address and say so
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="mailto:"]');if(!a)return;const m=a.href.slice(7),t=document.getElementById('toast');
+ const show=x=>{t.textContent=x;t.classList.add('on');clearTimeout(t.h);t.h=setTimeout(()=>t.classList.remove('on'),3000)};
+ show(m);navigator.clipboard?.writeText(m).then(()=>show('copied '+m),()=>{})});
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const small=innerWidth<=700||matchMedia('(pointer: coarse)').matches;
 let tp=0,p=0,stage=-1,mx=0,my=0,cx=-1,cy=-1,R;
