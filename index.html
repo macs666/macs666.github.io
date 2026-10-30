@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Muhammed Azhar · Forward-deployed AI engineer</title>
+<meta name="description" content="Muhammed Azhar builds AI agents that work in real businesses, on backends proven with Fortune 500 clients. Chief AI Researcher and Engineer at Recapp.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Muhammed Azhar · Forward-deployed AI engineer">
+<meta property="og:description" content="Want AI that works in your business, not just in a demo? Walk through how I got here.">
+<meta property="og:url" content="https://macs666.github.io/">
+<meta property="og:image" content="https://macs666.github.io/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='9' y='9' width='14' height='14' fill='none' stroke='%23ece9e2' stroke-width='2'/%3E%3Crect x='17' y='11' width='4' height='4' fill='%238b84ec'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--ink:#ece9e2;--dim:#8d8a83;--uv:#8b84ec}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "Space Mono",ui-monospace,monospace}
+a{color:var(--uv);text-decoration:none;border-bottom:1px solid transparent}a:hover,a:focus-visible{border-color:var(--uv)}
+#track{height:900vh}
+#stage{position:sticky;top:0;height:100vh;overflow:hidden}
+#gl{position:absolute;inset:0}
+/* a soft dark band behind the text so the board never fights the words */
+#stage::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(90deg,rgba(10,10,10,.92) 0,rgba(10,10,10,.6) 32%,rgba(10,10,10,0) 52%)}
+.top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:24px 32px;font-size:13px;z-index:2}
+.top nav{display:flex;gap:24px}
+#copy{position:absolute;left:32px;top:96px;max-width:min(520px,calc(100vw - 64px));z-index:2;pointer-events:none;text-shadow:0 0 24px #0a0a0a}
+.k{color:var(--dim);font-size:12px;letter-spacing:.08em;margin-bottom:14px}
+#copy h1,#story h2{font-weight:400;font-size:clamp(22px,2.8vw,36px);line-height:1.15;margin:0 0 16px;letter-spacing:-.02em}
+#copy p,#story p{margin:0;color:var(--dim)}
+.links{pointer-events:auto;margin-top:18px;display:flex;gap:20px}
+.fade{animation:in .5s ease both}@keyframes in{from{opacity:0;transform:translateY(8px)}}
+.cursor{display:inline-block;width:.55em;height:1em;background:var(--ink);vertical-align:-.12em;margin-left:.1em;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+#rail{position:absolute;right:28px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:2}
+#rail button{all:unset;cursor:pointer;width:10px;height:10px;border:1px solid #55534e;transform:rotate(45deg)}
+#rail button.on{background:var(--uv);border-color:var(--uv)}
+#rail button:focus-visible{outline:1px solid var(--uv);outline-offset:4px}
+#tip{position:absolute;z-index:3;pointer-events:none;background:#121212;border:1px solid #2a2a28;padding:8px 12px;font-size:12px;opacity:0;transition:opacity .15s;max-width:260px}
+.hint{position:absolute;bottom:24px;left:32px;font-size:12px;color:var(--dim);z-index:2;transition:opacity .4s}
+/* the story as plain text: read by screen readers and search engines, shown when 3D can't run */
+#story{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.flat #track{display:none}
+.flat #story{position:static;width:auto;height:auto;clip:auto;max-width:640px;margin:0 auto;padding:48px 20px 80px}
+.flat #story section{margin-bottom:56px}
+@media (max-width:700px){#stage::after{background:linear-gradient(0deg,rgba(10,10,10,.95) 0,rgba(10,10,10,.6) 38%,rgba(10,10,10,0) 60%)}.mouse{display:none}#copy{left:20px;top:auto;bottom:8vh}.hint{top:64px;bottom:auto;left:20px}.top{padding:18px 20px}#rail{right:14px}}
+@media (prefers-reduced-motion:reduce){.fade,.cursor{animation:none}}
+</style></head><body>
+<div id="track"><div id="stage">
+  <div id="gl" aria-hidden="true"></div>
+  <div class="top"><span>muhammed azhar</span><nav><a href="#contact" data-go>contact</a><a href="mailto:muhammedazhar.salim@gmail.com">email</a><a href="cv.pdf">cv</a></nav></div>
+  <div class="hint" id="hint" aria-hidden="true">scroll to build the board ↓<span class="mouse"> · move the mouse to look around</span></div>
+  <div id="copy" aria-hidden="true"></div>
+  <div id="rail" aria-hidden="true"></div>
+  <div id="tip" aria-hidden="true"></div>
+</div></div>
+
+<main id="story">
+  <section data-k="muhammed azhar · forward-deployed AI engineer" data-cursor>
+    <h2>Want AI that works in your business, not just in a demo?</h2>
+    <p>Then walk through how I got here. Each part on this board is one step of my journey to AI, and each one adds a skill your AI needs. Scroll to start.</p></section>
+  <section data-k="R1 · 2013–2016 · college" data-label="R1 · first AI: image processing with OpenCV">
+    <h2>I learn by building.</h2>
+    <p>In college I taught myself to make things work. One of my first projects taught a camera to recognise what it saw (OpenCV, image processing). That was my first step into AI. I also built small computers (Arduino, Raspberry Pi), web servers (Node.js) and iPhone apps.</p></section>
+  <section data-k="U1 · 2017–2019 · eygert tech" data-label="U1 · eygert tech: 6 engineers">
+    <h2>I can lead a team.</h2>
+    <p>I founded Eygert Tech and led 6 engineers. We built phone apps, websites and connected devices for clients. I set the technical plan, reviewed the code and worked with the clients.</p></section>
+  <section data-k="SW1 · 2019" data-label="SW1 · 2019: startup closed">
+    <h2>I keep going when something fails.</h2>
+    <p>In 2019 the startup closed. The switch on the board opens here. I joined a software company and kept building.</p></section>
+  <section data-k="R2 · 2019–2021 · exalture" data-label="R2 · exalture: iPhone apps">
+    <h2>I ship apps people use.</h2>
+    <p>At Exalture I built the iPhone apps for Qatar Museum and for Abraj, a real estate group in Qatar.</p></section>
+  <section data-k="U2 · 2021 · IMA360" data-label="U2 · IMA360: millions of records">
+    <h2>I can build a large system from zero.</h2>
+    <p>IMA360 needed a backend in Go, a language I hadn't used. I learned it in one month. Then, as the only backend engineer, I designed the whole system: it works out prices and rebates for big companies like McKesson, across millions of records. The team grew from 6 to about 30 engineers building on that design.</p></section>
+  <section data-k="D1 · 2026–now · recapp" data-label="D1 · recapp: AI agents for every team">
+    <h2>I build AI agents that do real work.</h2>
+    <p>Since August 2026 I'm Chief AI Researcher and Engineer at Recapp (Cascade Labs). I built Recapp's own AI system: agents for sales, design, development and testing that work alongside each person on the team. I use RAG (giving AI the right company facts) and Google ADK (a toolkit for building agents). Every step before this is why the agents hold up: they run on the kind of backend I've built for 10 years.</p></section>
+  <section id="contact" data-k="contact · work with me" data-cursor>
+    <h2>Everything here proves I can build it.</h2>
+    <p>Let's build AI that works in your business, together. Remote, from Ernakulam, Kerala.</p>
+    <div class="links"><a href="mailto:muhammedazhar.salim@gmail.com">email</a><a href="https://github.com/macs666">github</a><a href="cv.pdf">cv.pdf</a></div></section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// chapters come from the plain-text story above, so the words live in one place
+const S=[...document.querySelectorAll('#story section')].map(el=>({k:el.dataset.k,h:el.querySelector('h2').innerHTML+(el.hasAttribute('data-cursor')?'<span class="cursor"></span>':''),p:el.querySelector('p').innerHTML,links:el.querySelector('.links')?.outerHTML||'',label:el.dataset.label}));
+const N=S.length,copy=document.getElementById('copy'),rail=document.getElementById('rail'),tip=document.getElementById('tip'),host=document.getElementById('gl');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const small=innerWidth<=700||matchMedia('(pointer: coarse)').matches;
+let tp=0,p=0,stage=-1,mx=0,my=0,cx=-1,cy=-1,R;
+function flat(){document.body.classList.add('flat')}
+try{if(!window.THREE)throw 0;R=new THREE.WebGLRenderer({antialias:!small,powerPreference:small?'low-power':'high-performance'})}catch(e){flat()}
+if(R){
+S.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('aria-label',s.k);b.tabIndex=-1;b.onclick=()=>go(i);rail.appendChild(b)});
+function go(i){const T=document.getElementById('track');scrollTo({top:(i+.5)/N*(T.offsetHeight-innerHeight),behavior:reduce?'auto':'smooth'})}
+document.querySelector('[data-go]').onclick=e=>{e.preventDefault();go(N-1)};
+addEventListener('scroll',()=>{const T=document.getElementById('track');tp=Math.min(1,Math.max(0,scrollY/(T.offsetHeight-innerHeight)))},{passive:true});
+addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;cx=e.clientX;cy=e.clientY});
+function setStage(s){if(s==stage)return;stage=s;const d=S[s];
+ copy.innerHTML=`<div class="fade"><div class="k">${d.k}</div><h1>${d.h}</h1><p>${d.p}</p>${d.links.replaceAll('<a ','<a tabindex="-1" ')}</div>`;
+ [...rail.children].forEach((b,i)=>b.classList.toggle('on',i<=s));document.getElementById('hint').style.opacity=s?0:1}
+
+document.querySelectorAll('#story a').forEach(a=>a.tabIndex=-1);
+R.setPixelRatio(small?1:Math.min(devicePixelRatio,2));R.setClearColor(0x0a0a0a);host.appendChild(R.domElement);
+const scene=new THREE.Scene();scene.fog=new THREE.Fog(0x0a0a0a,30,75);
+const cam=new THREE.PerspectiveCamera(small?48:40,innerWidth/innerHeight,.1,200);
+// push the scene away from the text: right of it on desktop, above it on phones
+function fit(){R.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;const w=innerWidth,h=innerHeight;if(w>700)cam.setViewOffset(w,h,-w*.2,0,w,h);else cam.setViewOffset(w,h,0,h*.2,w,h);cam.updateProjectionMatrix()}
+addEventListener('resize',fit);fit();
+scene.add(new THREE.AmbientLight(0xffffff,.35));
+const spot=new THREE.SpotLight(0xffffff,1.4,60,.5,.6);spot.position.set(0,24,6);scene.add(spot,spot.target);
+// the board
+const board=new THREE.Mesh(new THREE.BoxGeometry(40,.4,24),new THREE.MeshStandardMaterial({color:0x111112,roughness:.9}));board.position.y=-.2;scene.add(board);
+const grid=new THREE.GridHelper(40,small?20:40,0x1c1c1b,0x161615);grid.position.y=.01;scene.add(grid);
+// traces: densified polylines drawn progressively with setDrawRange
+function dense(P){const out=[];for(let i=1;i<P.length;i++){const a=P[i-1],b=P[i],n=Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])*4);for(let k=0;k<n;k++)out.push(new THREE.Vector3(a[0]+(b[0]-a[0])*k/n,.03,a[1]+(b[1]-a[1])*k/n))}const e=P[P.length-1];out.push(new THREE.Vector3(e[0],.03,e[1]));return out}
+function trace(P){const pts=dense(P);const g=new THREE.BufferGeometry().setFromPoints(pts);const ghost=new THREE.Line(g,new THREE.LineBasicMaterial({color:0x1f1f1e}));const live=new THREE.Line(g.clone(),new THREE.LineBasicMaterial({color:0x8a8780}));scene.add(ghost,live);return{pts,live}}
+const A=trace([[-16,6],[-10,6],[-10,-1],[2,-1],[5,-1]]);
+const B=trace([[0,-1],[0,8],[7,8],[7,-4],[13,-4],[13,-8],[17,-8]]);
+const pick=[];
+const white=new THREE.MeshStandardMaterial({color:0x1a1a1a,roughness:.5,metalness:.3});
+const ledOff=new THREE.MeshBasicMaterial({color:0x2a2a28}),ledOn=new THREE.MeshBasicMaterial({color:0x8b84ec});
+function chip(x,z,w,d,s){const g=new THREE.Group();const body=new THREE.Mesh(new THREE.BoxGeometry(w,.7,d),white);body.position.y=.35;g.add(body);
+ const edge=new THREE.LineSegments(new THREE.EdgesGeometry(body.geometry),new THREE.LineBasicMaterial({color:0xcfccc4}));edge.position.y=.35;g.add(edge);
+ const pm=new THREE.MeshStandardMaterial({color:0x8a8780,metalness:.8,roughness:.3});
+ for(let i=0;i<Math.round(w*1.6);i++)for(const sd of[-1,1]){const pin=new THREE.Mesh(new THREE.BoxGeometry(.12,.1,.5),pm);pin.position.set(-w/2+.35+i*(w-.7)/Math.max(1,Math.round(w*1.6)-1),.05,sd*(d/2+.2));g.add(pin)}
+ const led=new THREE.Mesh(new THREE.BoxGeometry(.25,.05,.25),ledOff);led.position.set(w/2-.4,.72,-d/2+.4);g.add(led);
+ g.position.set(x,0,z);g.scale.y=.001;scene.add(g);body.userData={s};pick.push(body);return{g,led,s}}
+function resistor(x,z,s){const g=new THREE.Group();const m=new THREE.Mesh(new THREE.CylinderGeometry(.35,.35,2,16),new THREE.MeshStandardMaterial({color:0x2b2a27,roughness:.6}));m.rotation.z=Math.PI/2;m.position.y=.4;g.add(m);
+ [-.5,0,.5].forEach(o=>{const band=new THREE.Mesh(new THREE.CylinderGeometry(.37,.37,.12,16),new THREE.MeshStandardMaterial({color:0xcfccc4}));band.rotation.z=Math.PI/2;band.position.set(o,.4,0);g.add(band)});
+ g.position.set(x,0,z);g.scale.y=.001;scene.add(g);m.userData={s};pick.push(m);return{g,s}}
+const parts=[resistor(-13,6,1),chip(-4,-1,3,2.2,2),resistor(3.5,8,4),chip(10,-4,4.6,3.2,5)];
+const leds=parts.filter(q=>q.led);
+// the switch that opens in 2019
+const sw=new THREE.Mesh(new THREE.BoxGeometry(1.6,.08,.12),new THREE.MeshStandardMaterial({color:0xcfccc4}));sw.geometry.translate(.8,0,0);sw.position.set(3.4,.1,-1);sw.userData={s:3};pick.push(sw);scene.add(sw);
+// silkscreen designators printed beside each part
+const silks=[];
+function silk(t,x,z,s){const c=document.createElement('canvas');c.width=128;c.height=64;const g=c.getContext('2d');g.font='36px Space Mono, monospace';g.fillStyle='#cfccc4';g.textAlign='center';g.textBaseline='middle';g.fillText(t,64,32);const m=new THREE.Mesh(new THREE.PlaneGeometry(1.6,.8),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(c),transparent:true,opacity:0}));m.rotation.x=-Math.PI/2;m.position.set(x,.03,z);scene.add(m);silks.push({m,s})}
+document.fonts.ready.then(()=>{silk('R1',-13,7.3,1);silk('U1',-4,1.1,2);silk('SW1',4.2,.2,3);silk('R2',3.5,9.3,4);silk('U2',10,-1.4,5);silk('D1',17,-6.6,6)});
+// recapp: a glowing node
+const node=new THREE.Mesh(new THREE.SphereGeometry(.5,24,16),ledOn);node.position.set(17,.5,-8);node.scale.setScalar(.001);node.userData={s:6};pick.push(node);scene.add(node);
+const halo=new THREE.Mesh(new THREE.RingGeometry(.8,.9,48),new THREE.MeshBasicMaterial({color:0x8b84ec,transparent:true,opacity:.5,side:THREE.DoubleSide}));halo.rotation.x=-Math.PI/2;halo.position.set(17,.05,-8);scene.add(halo);
+const glow=new THREE.PointLight(0x8b84ec,0,12);glow.position.set(17,2,-8);scene.add(glow);
+// current pulses
+const pulseGeo=new THREE.BoxGeometry(.18,.18,.18),pulseW=new THREE.MeshBasicMaterial({color:0xece9e2});let pulses=[];
+// camera path, one shot per chapter
+const K=[[[0,30,24],[0,0,0]],[[-18,8,16],[-12,0,4]],[[-7,7,8],[-4,0,-1]],[[1,5,4],[4,0,-1]],[[1,7,15],[3.5,0,7]],[[6,9,4],[10,0,-4]],[[22,8,-1],[19,0,-8]],[[9,46,17],[6,0,-1]]];
+const v=a=>new THREE.Vector3(...a),pos=new THREE.Vector3(),tgt=new THREE.Vector3();
+const fa=q=>Math.min(1,Math.max(0,(q*N-1)/2)),fb=q=>Math.min(1,Math.max(0,(q*N-4)/2));
+const ray=new THREE.Raycaster(),mv=new THREE.Vector2();let hover=null;
+R.domElement.addEventListener('click',()=>{if(hover)go(hover.userData.s)});
+const m=location.hash.match(/p=([\d.]+)/);if(m){tp=p=+m[1]}
+const ease=t=>t*t*(3-2*t);
+function frame(time){p+=(tp-p)*.08;const s=Math.min(N-1,Math.floor(p*N));setStage(s);
+ // camera reaches each chapter's shot at the middle of that chapter's scroll
+ const t=Math.min(N-1,Math.max(0,p*N-.5)),i=Math.min(N-2,Math.floor(t)),f=ease(t-i);
+ pos.lerpVectors(v(K[i][0]),v(K[i+1][0]),f);tgt.lerpVectors(v(K[i][1]),v(K[i+1][1]),f);
+ cam.position.set(pos.x+mx*3,pos.y-my*2,pos.z);cam.lookAt(tgt);spot.target.position.copy(tgt);
+ const a=fa(p),b=fb(p);A.live.geometry.setDrawRange(0,Math.floor(a*A.pts.length));B.live.geometry.setDrawRange(0,Math.floor(b*B.pts.length));
+ parts.forEach(q=>{q.g.scale.y+=((s>=q.s?1:.001)-q.g.scale.y)*.1});leds.forEach(q=>q.led.material=s>=q.s?ledOn:ledOff);
+ silks.forEach(q=>q.m.material.opacity+=((s>=q.s?.8:0)-q.m.material.opacity)*.08);
+ sw.rotation.y+=((s>=3?.55:0)-sw.rotation.y)*.08;
+ const on=s>=6,pulse=reduce?1:1+Math.sin(time*.004)*.12;node.scale.setScalar(on?pulse:.001);halo.material.opacity=on?.35+(reduce?0:Math.sin(time*.004)*.15):0;glow.intensity=on?1.4:0;
+ if(!reduce&&Math.random()<(small?.05:.12)){if(a>.02)pulses.push({T:A,k:0,max:a*(s>=3?.9:1)});if(b>.02)pulses.push({T:B,k:0,max:b})}
+ pulses=pulses.filter(q=>{q.k+=.006;if(q.k>=q.max){scene.remove(q.m);return false}if(!q.m){q.m=new THREE.Mesh(pulseGeo,q.T==B&&s>=5?ledOn:pulseW);scene.add(q.m)}const pt=q.T.pts[Math.floor(q.k*(q.T.pts.length-1))];q.m.position.set(pt.x,.12,pt.z);return true});
+ if(cx>=0){mv.set(cx/innerWidth*2-1,-(cy/innerHeight)*2+1);ray.setFromCamera(mv,cam);const hit=ray.intersectObjects(pick)[0];hover=hit&&s>=hit.object.userData.s?hit.object:null}
+ if(hover){tip.textContent=S[hover.userData.s].label;tip.style.left=Math.min(innerWidth-280,cx+18)+'px';tip.style.top=(cy-40)+'px';tip.style.opacity=1;R.domElement.style.cursor='pointer'}else{tip.style.opacity=0;R.domElement.style.cursor='default'}
+ R.render(scene,cam);requestAnimationFrame(frame)}
+requestAnimationFrame(frame)}
+</script></body></html>
