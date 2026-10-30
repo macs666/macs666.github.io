@@ -147,6 +147,8 @@ const glow=new THREE.PointLight(0x8b84ec,0,12);glow.position.set(17,2,-8);scene.
 const pulseGeo=new THREE.BoxGeometry(.18,.18,.18),pulseW=new THREE.MeshBasicMaterial({color:0xece9e2});let pulses=[];
 // camera path, one shot per chapter
 const K=[[[0,30,24],[0,0,0]],[[-18,8,16],[-12,0,4]],[[-7,7,8],[-4,0,-1]],[[1,5,4],[4,0,-1]],[[1,7,15],[3.5,0,7]],[[6,9,4],[10,0,-4]],[[22,8,-1],[19,0,-8]],[[9,46,17],[6,0,-1]]];
+// portrait screens: the last shot looks straight down with the board's long side up the screen
+const KT=[[4.5,62,2],[4.5,0,.5]],UX=new THREE.Vector3(1,0,0);
 const v=a=>new THREE.Vector3(...a),pos=new THREE.Vector3(),tgt=new THREE.Vector3();
 const fa=q=>Math.min(1,Math.max(0,(q*N-1)/2)),fb=q=>Math.min(1,Math.max(0,(q*N-4)/2));
 const ray=new THREE.Raycaster(),mv=new THREE.Vector2();let hover=null;
@@ -156,7 +158,9 @@ const ease=t=>t*t*(3-2*t);
 function frame(time){p+=(tp-p)*.08;const s=Math.min(N-1,Math.floor(p*N));setStage(s);
  // camera reaches each chapter's shot at the middle of that chapter's scroll
  const t=Math.min(N-1,Math.max(0,p*N-.5)),i=Math.min(N-2,Math.floor(t)),f=ease(t-i);
- pos.lerpVectors(v(K[i][0]),v(K[i+1][0]),f);tgt.lerpVectors(v(K[i][1]),v(K[i+1][1]),f);
+ const end=i==N-2&&innerWidth<innerHeight,k=end?KT:K[i+1];
+ pos.lerpVectors(v(K[i][0]),v(k[0]),f);tgt.lerpVectors(v(K[i][1]),v(k[1]),f);
+ cam.up.set(0,1,0);if(end)cam.up.lerp(UX,f);if(scene.fog){scene.fog.near=30+(end?14*f:0);scene.fog.far=75+(end?14*f:0)}
  cam.position.set(pos.x+mx*3,pos.y-my*2,pos.z);cam.lookAt(tgt);spot.target.position.copy(tgt);
  const a=fa(p),b=fb(p);A.live.geometry.setDrawRange(0,Math.floor(a*A.pts.length));B.live.geometry.setDrawRange(0,Math.floor(b*B.pts.length));
  parts.forEach(q=>{q.g.scale.y+=((s>=q.s?1:.001)-q.g.scale.y)*.1});leds.forEach(q=>q.led.material=s>=q.s?ledOn:ledOff);
